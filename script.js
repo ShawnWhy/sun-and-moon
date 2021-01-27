@@ -34,8 +34,8 @@ node.innerHTML = "I'm an image now."
     });
 }
 </script> */}
-var moonRayArray=[];
-var sunRayArray=[];
+// var moonRayArray=[];
+// var sunRayArray=[];
 
 $('.sun').on('mouseover',event=>{
   $('.shield').addClass('rotateShield')
@@ -86,6 +86,7 @@ $('.moon').on('click',event=>{
 })
 
 function glowFade(){
+  // moonRayArray=[];
   var rayArray= $('.ray')
   var rayLength= rayArray.length;
   for(let i=0; i<rayLength; i++){
@@ -93,8 +94,8 @@ function glowFade(){
       var style = $(rayArray[i]).attr('style');
       styleArray=style.split(';');
       color=styleArray[1]
-      moonRayArray.push(color);
-      console.log(moonRayArray);
+      // moonRayArray.push(color);
+      // console.log(moonRayArray);
       $(rayArray[i]).attr('style', 'transform:scale('+(1+((6-i)*.3))+');'+color+';opacity:30%')
       var star=$('<div>');
       var height=Math.floor(Math.random()*100);
@@ -186,9 +187,9 @@ var creategradientsky= function( ){
   var green = colors[1];
   var blue = colors[2].split(')');
   blue=blue[0]
-  console.log(blue);
-  console.log(red);
-  console.log(green);
+  // console.log(blue);
+  // console.log(red);
+  // console.log(green);
    var skystripe=$('<div>')
     $(skystripe).addClass('skystrip');
     $(skystripe).attr("style", "background-color:rgb("+red+","+green+","+blue+",.3);height:"+ Math.pow(rayLength-i,2)/200+"%")
@@ -205,7 +206,7 @@ var creategradientground= function( ){
   var colors = $(rays[i]).attr('style');
   colors = colors.split(";");
   colors=colors[1];
-  console.log(colors);
+  // console.log(colors);
   var skystripe=$('<div>')
     $(skystripe).addClass('skystrip');
     $(skystripe).attr("style", colors+";height:"+ Math.pow(i,2)/200+"%")
