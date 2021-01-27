@@ -1,0 +1,241 @@
+.sky{
+  width: 100%;
+  height:80%;
+  background-color:yellow;
+  position:absolute;
+  z-index:0
+
+}
+.day{
+  position:absolute;
+  height:100%;
+  width:100%;
+
+
+
+
+}
+.night{
+  position:absolute;
+  height:100%;
+  width:100%;
+  background: linear-gradient(to left,rgb(70, 4, 124) 40%,rgba(0, 0, 0, 0));
+
+}
+.ground{
+  width: 100%;
+  height:20%;
+  background-color:rgb(130, 173, 130);
+  position:absolute;
+  top:80%;
+
+
+}
+
+.sun{
+  position:absolute;
+  height:300px;
+  width:300px;
+  left:20%;
+  top:15%;  
+  z-index:1;
+  text-align:center;
+
+
+}
+
+.shield{
+  position: relative;
+  height:100%;
+  width:100%;
+  border-radius: 50%;
+  background-color:rgb(255, 205, 112);
+  margin:auto;
+  text-align:center;
+  transform-origin:center;
+  z-index:2;
+
+}
+.gear{
+  position: relative;
+  top:12.5%;
+
+  height:75%;
+  width:75%;
+  border-radius:20%;
+  transform-origin:center;
+  transform:rotate(30deg);
+  margin:auto;
+  text-align:center;
+
+}
+
+.gearOne{
+  background: orange;
+  margin:auto;
+  
+}
+.gearlid{
+  background-color: rgba(247, 209, 138);
+  border-radius: 50%;
+}
+.gearTwo{
+  background: rgb(238, 255, 0);
+  margin:auto;
+}
+
+.gearThree{
+  background: rgb(242, 255, 211);
+  margin:auto;
+}
+.rays{
+  position:absolute;
+  z-index:-1;
+  top:40%;
+  left:50%;
+
+}
+.rayStick{
+  transform-origin:bottom;
+  width:1px;
+  height:30px;
+  position:absolute;
+  z-index:2;
+}
+
+
+.moon{
+  height:250px;
+  width:250px;
+  position:absolute;
+  right:10%;
+  top:20%;
+}
+
+.moonFace{
+  height:100%;
+  width:100%;
+  border-radius:50%;
+  background-color:skyblue;
+  position:absolute;
+  overflow: hidden;
+  z-index:1;
+
+
+}
+.moonShadow{
+  height:100%;
+  width:100%;
+  border-radius:50%;
+  position:relative;
+  background-color:rgb(70, 4, 124);
+  right:30%;
+  bottom:1%;
+
+  
+}
+
+ 
+.rotateShield{
+  animation:rotateShield .2s both ease;
+  transform-origin:bottom;
+}
+
+@keyframes rotateShield{
+  0%{transform:rotate(-0deg)}
+  50%{transform:rotate(-7deg)}
+  100%{transform:rotate(-15deg)}
+
+}
+
+.rotateGearRight{
+  animation:rotateGearRight .2s both ease;
+  transform-origin:center;
+
+}
+@keyframes rotateGearRight{
+  0%{transform:rotate(30deg)}
+  50%{transform:rotate(60deg)}
+  100%{transform:rotate(120deg)}
+
+}
+
+
+.rotateGearLeft{
+  animation:rotateGearLeft .2s both ease;
+  transform-origin:center;
+  
+}
+@keyframes rotateGearLeft{
+  0%{transform:rotate(30deg)}
+  50%{transform:rotate(0deg)}
+  100%{transform:rotate(-30deg)}
+
+}
+
+.fullMoon{
+  animation:fullMoon .2s both ease
+}
+
+@keyframes fullMoon{ 
+0%{transform:traslateX(0)}
+50%{transform:translateX(-30%)}
+100%{transform:translateX(-80%)}
+}
+
+.ray{
+  position:absolute;
+  transform-origin:center;
+  height:100%;
+  width:100%;
+  border-radius:50%;
+  z-index:0;
+ 
+}
+
+.star{
+  position:absolute;
+  animation:blink 1.3s infinite;
+  border-radius: 50%;
+}
+
+@keyframes blink{
+  0%{opacity:100%}
+  100%{opacity:1%};
+}
+
+.fallStar{
+  border-radius: 50%;
+  position:absolute;
+  animation:fallStar .5s both ease;
+}
+
+@keyframes fallStar{
+  0%{transform:translateY(0px)}
+  25%{transform:translateY(100px)}
+  50%{transform:translateY(300px)}
+100%{transform:translateY(600px)}
+
+}
+
+.stone{
+  border-radius: 50%;
+  position:absolute;
+}
+
+body{
+  overflow: hidden;
+}
+
+.rayExpand{
+  animation: rayExpand .5s ease both;
+
+
+}
+
+@keyframes rayExpand{
+  0%{transform:scale(4);transform-origin:center;top:0%;left:50%;opacity:100%;}
+  50%{transform:scale(4);transform-origin:center;top:0%;left:50%;opacity:50%}
+  100%{transform:scale(4);transform-origin:center;top:0%;left:50%;opacity:0%}
+
+}
