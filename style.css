@@ -239,3 +239,9 @@ body{
   100%{transform:scale(4);transform-origin:center;top:0%;left:50%;opacity:0%}
 
 }
+.skystrip{
+  width:100%; 
+  position:relative;
+  z-index:0
+
+}

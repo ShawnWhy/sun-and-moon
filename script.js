@@ -161,6 +161,8 @@ $('.sun').on('click',event=>{
   $('.rays').addClass('rayExpand')
   setTimeout(() => {
     $('.rays').removeClass('rayExpand')
+    creategradientsky();
+    creategradientground();
 
     
   }, 500);
@@ -168,21 +170,45 @@ $('.sun').on('click',event=>{
 
 
 var creategradientsky= function( ){
-  $(".sky").html("");
-  $(".ground").html("");
-  // console.log($(event.target).attr('style'))
-  var colors = $(event.target).attr('style');
-  colors = colors.split("(");
-  colors=colors[3];
-  colors= colors.split(',');
+  $(".day").html("");
+  
+  var rays=$('.rayStick')
+  var rayLength=rays.length;
+  for(i=0; i<rayLength;i++){
+  // $(rayArray[i]).attr('style', 'transform:scale(7)rotate('+i*7.5+'deg);background-color:rgb('+red+','+green+','+blue+')')
+
+  var colors = $(rays[i]).attr('style');
+  colors = colors.split(";");
+  colors=colors[1];
+  colors=colors.split('(');
+  colors=colors[1].split(',');
   var red=colors[0];
   var green = colors[1];
-  var blue = colors[2];
-  // console.log(red, green, bluef)
-  for(var i=0;i<40;i++){
-    var skystripe=$('<div>')
+  var blue = colors[2].split(')');
+  blue=blue[0]
+  console.log(blue);
+  console.log(red);
+  console.log(green);
+   var skystripe=$('<div>')
     $(skystripe).addClass('skystrip');
-    $(skystripe).attr("style", "background-color: rgba("+red+","+green+","+blue+","+(40-i)/100+");height:"+ Math.pow(40-i,2)/200+"%")
-    $(".sky").append(skystripe);
+    $(skystripe).attr("style", "background-color:rgb("+red+","+green+","+blue+",.3);height:"+ Math.pow(rayLength-i,2)/200+"%")
+    $(".day").append(skystripe);
+  };
+}
+var creategradientground= function( ){
+  $(".ground").html("");
+  var rays=$('.rayStick')
+  var rayLength=rays.length;
+  for(i=0; i<rayLength;i++){
+  // $(rayArray[i]).attr('style', 'transform:scale(7)rotate('+i*7.5+'deg);background-color:rgb('+red+','+green+','+blue+')')
+
+  var colors = $(rays[i]).attr('style');
+  colors = colors.split(";");
+  colors=colors[1];
+  console.log(colors);
+  var skystripe=$('<div>')
+    $(skystripe).addClass('skystrip');
+    $(skystripe).attr("style", colors+";height:"+ Math.pow(i,2)/200+"%")
+    $(".ground").append(skystripe);
   };
 }
